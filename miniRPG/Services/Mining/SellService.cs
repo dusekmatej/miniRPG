@@ -49,7 +49,7 @@ public class SellService
                 case "stone":
                     GameState.Mining.StoneAmount -= value;
                     GameState.Currencies.Money += value * GameState.Mining.Store.StoneSellPrice;
-                    StatIncrease.MiningStats.GainExperience(GameState.Mining.Experience.StoneSell);
+                    StatIncrease.MiningStats.GainExperience(GameState.Mining.Experience.StoneSell * value);
                     break;
                 case "iron":
                     GameState.Mining.IronAmount -= value;

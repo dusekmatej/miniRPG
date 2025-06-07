@@ -12,3 +12,4 @@ C:\Users\matdu\source\c#\miniRPG\miniRPG\obj\Debug\net9.0\refint\miniRPG.dll
 C:\Users\matdu\source\c#\miniRPG\miniRPG\obj\Debug\net9.0\miniRPG.pdb
 C:\Users\matdu\source\c#\miniRPG\miniRPG\obj\Debug\net9.0\miniRPG.genruntimeconfig.cache
 C:\Users\matdu\source\c#\miniRPG\miniRPG\obj\Debug\net9.0\ref\miniRPG.dll
+C:\Users\matdu\source\c#\miniRPG\miniRPG\obj\Debug\net9.0\miniRPG.sourcelink.json
