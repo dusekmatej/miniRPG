@@ -1,3 +1,5 @@
+using System.Drawing;
+
 namespace miniRPG;
 
 public static class GameState
@@ -70,5 +72,7 @@ public static class GameState
     public static bool IsRunning { get; set; } = true;
     public static bool LogEntered { get; set; } = false;
     public static bool LogAllowed { get; set; } = true;
+    public static ConsoleColor CurrentColor { get; set; } = ConsoleColor.Red;
+
     #endregion
 }

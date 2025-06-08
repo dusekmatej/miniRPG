@@ -10,4 +10,24 @@ public static class MainMenuLists
         "Options",
         "Save & Exit"
     };
+
+    public static string[] OptionsScreen = new string[]
+    {
+        "Change Color",
+        "Random other option",
+        "<--"
+    };
+    
+    public static string[] ColorOptions = new string[]
+    {
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow",
+        "Cyan",
+        "Magenta",
+        "White",
+        "Black",
+        "<--"
+    };
 }

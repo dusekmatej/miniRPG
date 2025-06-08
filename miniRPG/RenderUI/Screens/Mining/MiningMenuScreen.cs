@@ -1,6 +1,6 @@
 using miniRPG.Services.Mining;
 using miniRPG.RenderUI.ScreenLists;
-using miniRPG.RenderUI.Screens;
+using miniRPG.RenderUI.Screens.MainMenu;
 using miniRPG.Services;
 
 namespace miniRPG.RenderUI.Screens.Mining;
@@ -14,7 +14,6 @@ public class MiningMenuScreen : IScreen
     {
         Console.Clear();
         Console.Write("-----   ");
-        Console.ForegroundColor = ConsoleColor.Red;
         Console.Write("MiniRPG");
         Console.ResetColor();
         Console.WriteLine("   -----");
@@ -27,7 +26,7 @@ public class MiningMenuScreen : IScreen
         for (int i = 0; i < MiningMenuLists.MiningMenuScreen.Length; i++)
         {
             if (i == _selectedItem)
-                Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = GameState.CurrentColor;
             
             Console.WriteLine(MiningMenuLists.MiningMenuScreen[i]);
             Console.ResetColor();
@@ -47,13 +46,13 @@ public class MiningMenuScreen : IScreen
 
     public void SelectPrevious()
     {
-        if (_selectedItem > 0)
+        if (_selectedItem == 0)
         {
-            _selectedItem--;
+            _selectedItem = MainMenuLists.MainMenuScreen.Length - 1;
             return;
         }
 
-        _selectedItem = MiningMenuLists.MiningMenuScreen.Length;
+        _selectedItem--;
     }
 
     public IScreen ConfirmSelection()

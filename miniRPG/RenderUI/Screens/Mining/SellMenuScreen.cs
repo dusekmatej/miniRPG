@@ -43,7 +43,7 @@ public class SellMenuScreen : IScreen
         {
             if (i == _selectedItem)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = GameState.CurrentColor;
                 Console.WriteLine($"> {_cachedFilteredMenu[i]}");
                 Console.ResetColor();
             }
@@ -62,8 +62,13 @@ public class SellMenuScreen : IScreen
 
     public void SelectPrevious()
     {
-        if (_cachedFilteredMenu.Length == 0) return;
-        _selectedItem = (_selectedItem - 1 + _cachedFilteredMenu.Length) % _cachedFilteredMenu.Length;
+        if (_selectedItem == 0)
+        {
+            _selectedItem = MainMenuLists.MainMenuScreen.Length - 1;
+            return;
+        }
+
+        _selectedItem--;
     }
 
     public IScreen ConfirmSelection()

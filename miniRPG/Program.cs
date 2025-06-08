@@ -1,4 +1,5 @@
 ﻿using miniRPG.RenderUI.Screens;
+using miniRPG.RenderUI.Screens.MainMenu;
 using miniRPG.Services;
 
 // TODO: Make the ui better with bigger texts such as LEVEL UP text in big when you LEVEL UP

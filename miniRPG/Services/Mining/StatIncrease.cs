@@ -22,7 +22,7 @@ public static class StatIncrease
         GameState.Mining.Experience.Current -= GameState.Mining.Experience.Intervals[GameState.Mining.Experience.Level];
         GameState.Mining.Experience.Level++;
 
-        Console.ForegroundColor = ConsoleColor.Red;
+        Console.ForegroundColor = GameState.CurrentColor;
         // ASCII art for level up
         Console.WriteLine(" _                    _          _               \n| |                  | |        | |              \n| |     _____   _____| | ___  __| |  _   _ _ __  \n| |    / _ \\ \\ / / _ \\ |/ _ \\/ _` | | | | | '_ \\ \n| |___|  __/\\ V /  __/ |  __/ (_| | | |_| | |_) |\n\\_____/\\___| \\_/ \\___|_|\\___|\\__,_|  \\__,_| .__/ \n                                          | |    \n                                          |_|    ");
         Console.ResetColor();

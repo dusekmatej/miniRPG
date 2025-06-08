@@ -1,7 +1,7 @@
 using miniRPG.RenderUI.ScreenLists;
 using miniRPG.RenderUI.Screens.Mining;
 
-namespace miniRPG.RenderUI.Screens;
+namespace miniRPG.RenderUI.Screens.MainMenu;
 
 public class MainMenuScreen : IScreen
 {
@@ -16,7 +16,7 @@ public class MainMenuScreen : IScreen
         for (int i = 0; i < MainMenuLists.MainMenuScreen.Length; i++)
         {
             if (i == _selectedItem)
-                Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = GameState.CurrentColor;
             
             Console.WriteLine(MainMenuLists.MainMenuScreen[i]);
             Console.ResetColor();
@@ -36,13 +36,13 @@ public class MainMenuScreen : IScreen
 
     public void SelectPrevious()
     {
-        if (_selectedItem > 0)
+        if (_selectedItem == 0)
         {
-            _selectedItem--;
+            _selectedItem = MainMenuLists.MainMenuScreen.Length - 1;
             return;
         }
 
-        _selectedItem = MainMenuLists.MainMenuScreen.Length;
+        _selectedItem--;
     }
 
     public IScreen ConfirmSelection()
@@ -56,6 +56,8 @@ public class MainMenuScreen : IScreen
             
             case "Woodworking":
                 throw new NotImplementedException();
+            case "Options":
+                return new OptionsScreen();
             case "Save & Exit":
                 // SaveManger.Save();
                 GameState.IsRunning = false;

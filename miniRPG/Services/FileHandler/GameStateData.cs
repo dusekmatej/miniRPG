@@ -21,4 +21,6 @@ public class GameStateData
     public int MiningExperienceLevel { get; set; } 
 
     public int UpgradesSpeedLevel { get; set; }
+    
+    public ConsoleColor CurrentColor { get; set; }
 }
