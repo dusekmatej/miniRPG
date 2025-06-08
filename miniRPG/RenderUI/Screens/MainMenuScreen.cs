@@ -56,7 +56,10 @@ public class MainMenuScreen : IScreen
             
             case "Woodworking":
                 throw new NotImplementedException();
-            
+            case "Save & Exit":
+                // SaveManger.Save();
+                GameState.IsRunning = false;
+                return this;
             default:
                 return this;
         }

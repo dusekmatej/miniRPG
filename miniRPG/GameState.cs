@@ -41,6 +41,15 @@ public static class GameState
             public static int EmeraldMine { get; set; } = 35;
         }
 
+        public class Upgrades
+        {   
+            public static int SpeedLevel { get; set; } = 0;
+            //0     1    2    3    4    5     6    7   8
+            public static double[] Speed { get; set; } = [1000, 800, 600, 500, 400, 300, 200, 100, 50];
+            public static int[] SpeedCost { get; set; } = [];
+        }
+        
+        
         public static class Store
         {
             public static int StonePrice { get; set; } = 5;
