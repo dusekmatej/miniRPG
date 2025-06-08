@@ -10,6 +10,13 @@ public class DiggingService
     
     public void Dig()
     {
+        if (!Upgrade.CalculateInventorySize())
+        {
+            Console.WriteLine("Your inventory is full! Sell resource or upgrade your inventory size.");
+            Console.ReadKey(true);
+            return;
+        }
+        
         Loading();
         GenerateResource();
         Logging.Log($"Digging action performed: {GameState.Mining.LastMaterial}");

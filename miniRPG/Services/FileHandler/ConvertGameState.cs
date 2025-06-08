@@ -21,7 +21,7 @@ public static class ConvertGameState
             MiningEmeraldAmount = GameState.Mining.EmeraldAmount,
             MiningExperienceCurrent = GameState.Mining.Experience.Current,
             MiningExperienceLevel = GameState.Mining.Experience.Level,
-            UpgradesSpeedLevel = GameState.Mining.Upgrades.SpeedLevel,
+            UpgradesSpeedLevel = GameState.Mining.Upgrade.SpeedLevel,
             CurrentColor = GameState.CurrentColor
         };
     }
@@ -38,7 +38,7 @@ public static class ConvertGameState
         GameState.Mining.EmeraldAmount = data.MiningEmeraldAmount;
         GameState.Mining.Experience.Current = data.MiningExperienceCurrent;
         GameState.Mining.Experience.Level = data.MiningExperienceLevel;
-        GameState.Mining.Upgrades.SpeedLevel = data.UpgradesSpeedLevel;
+        GameState.Mining.Upgrade.SpeedLevel = data.UpgradesSpeedLevel;
         GameState.CurrentColor = data.CurrentColor;
     }
 }

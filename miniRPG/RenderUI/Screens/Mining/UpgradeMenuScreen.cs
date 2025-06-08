@@ -1,9 +1,9 @@
 using miniRPG.RenderUI.ScreenLists;
-using miniRPG.RenderUI.Screens.Mining;
+using miniRPG.Services.Mining;
 
-namespace miniRPG.RenderUI.Screens.MainMenu;
+namespace miniRPG.RenderUI.Screens.Mining;
 
-public class MainMenuScreen : IScreen
+public class UpgradeMenuScreen : IScreen
 {
     private int _selectedItem = 0;
     
@@ -15,19 +15,19 @@ public class MainMenuScreen : IScreen
         Console.WriteLine("___  ____       _____________ _____ \n|  \\/  (_)     (_) ___ \\ ___ \\  __ \\\n| .  . |_ _ __  _| |_/ / |_/ / |  \\/\n| |\\/| | | '_ \\| |    /|  __/| | __ \n| |  | | | | | | | |\\ \\| |   | |_\\ \\\n\\_|  |_/_|_| |_|_\\_| \\_\\_|    \\____/\n                                    \n                                    ");
         Console.WriteLine($"Stone: {GameState.Mining.StoneAmount} Total inventory fill: {GameState.Mining.InventoryFill} Money: {GameState.Currencies.Money}");
 
-        for (int i = 0; i < MainMenuLists.MainMenuScreen.Length; i++)
+        for (int i = 0; i < MiningMenuLists.UpgradeMenuScreen.Length; i++)
         {
             if (i == _selectedItem)
                 Console.ForegroundColor = GameState.CurrentColor;
             
-            Console.WriteLine(MainMenuLists.MainMenuScreen[i]);
+            Console.WriteLine(MiningMenuLists.UpgradeMenuScreen[i]);
             Console.ResetColor();
         }
     }
 
     public void SelectNext()
     {
-        if (_selectedItem < MainMenuLists.MainMenuScreen.Length - 1)
+        if (_selectedItem < MiningMenuLists.UpgradeMenuScreen.Length - 1)
         {
             _selectedItem++;
             return;
@@ -40,7 +40,7 @@ public class MainMenuScreen : IScreen
     {
         if (_selectedItem == 0)
         {
-            _selectedItem = MainMenuLists.MainMenuScreen.Length - 1;
+            _selectedItem = MiningMenuLists.UpgradeMenuScreen.Length - 1;
             return;
         }
 
@@ -49,20 +49,12 @@ public class MainMenuScreen : IScreen
 
     public IScreen ConfirmSelection()
     {
-        string selectedText = MainMenuLists.MainMenuScreen[_selectedItem];
+        string selectedText = MiningMenuLists.UpgradeMenuScreen[_selectedItem];
 
         switch (selectedText)
         {
-            case "Mining":
-                return new MiningMenuScreen();
-            
-            case "Woodworking":
-                throw new NotImplementedException();
-            case "Options":
-                return new OptionsScreen();
-            case "Save & Exit":
-                // SaveManger.Save();
-                GameState.IsRunning = false;
+            case "Upgrade Inventory Size":
+                Upgrade.InventorySize();
                 return this;
             default:
                 return this;

@@ -11,7 +11,8 @@ public static class DisplayStats
                           $"Emerald: {GameState.Mining.EmeraldAmount} " +
                           $"Money: {GameState.Currencies.Money} " +
                           $"Level: {GameState.Mining.Experience.Level} " +
-                          $"Experience: {GameState.Mining.Experience.Current} ";
+                          $"Experience: {GameState.Mining.Experience.Current} " +
+                          $"Inventory Size: {GameState.Mining.InventoryFill}/{GameState.Mining.Upgrade.InventorySize[GameState.Mining.Upgrade.InventorySizeLevel]}";
     }
 
 }

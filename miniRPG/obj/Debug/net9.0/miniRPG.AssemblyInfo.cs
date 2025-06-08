@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("miniRPG")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be5912237aecd1525eb8a0fd97d1b41225bffcb5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0da0de6a84b15a4e82a0b23104889621e6a0315d")]
 [assembly: System.Reflection.AssemblyProductAttribute("miniRPG")]
 [assembly: System.Reflection.AssemblyTitleAttribute("miniRPG")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

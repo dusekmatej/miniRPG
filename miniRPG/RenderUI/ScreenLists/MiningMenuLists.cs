@@ -30,4 +30,12 @@ public static class MiningMenuLists
         "Sell Emerald",
         "<--"
     };
+
+    public static string[] UpgradeMenuScreen = new string[]
+    {
+        "Upgrade Multiplier",
+        "Upgrade Mining Speed",
+        "Upgrade Inventory Size",
+        "Increase chances of finding rare ores"
+    };
 }

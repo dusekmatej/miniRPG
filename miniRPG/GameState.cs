@@ -1,4 +1,5 @@
 using System.Drawing;
+using miniRPG.Services.Mining;
 
 namespace miniRPG;
 
@@ -19,7 +20,7 @@ public static class GameState
         public static int DiamondAmount { get; set; }
         public static int EmeraldAmount { get; set; }
 
-        public static int InventoryFill { get; set; } = StoneAmount + IronAmount + GoldAmount + DiamondAmount + EmeraldAmount;
+        public static int InventoryFill { get; set; } = Services.Mining.Upgrade.GetCurrentFill();
 
         public static class Experience
         {
@@ -43,12 +44,16 @@ public static class GameState
             public static int EmeraldMine { get; set; } = 35;
         }
 
-        public class Upgrades
+        public class Upgrade
         {   
             public static int SpeedLevel { get; set; } = 0;
             //0     1    2    3    4    5     6    7   8
             public static double[] Speed { get; set; } = [1000, 800, 600, 500, 400, 300, 200, 100, 50];
             public static int[] SpeedCost { get; set; } = [];
+            
+            public static int[] InventorySizeCost { get; set; } = [1000, 2500, 5000, 7500, 10000, 15000, 20000, 30000, 50000];
+            public static int InventorySizeLevel { get; set; } = 0;
+            public static int[] InventorySize { get; set; } = [20, 30, 40, 60, 80, 120, 160, 200, 250];
         }
         
         
